@@ -190,6 +190,7 @@ class WaterPredictor:
 
     def predict(self, input_data):
         # 1. Encode Inputs
+        # MLD- Million Litres Per Day
         try:
             season_code = self.le_season.transform([input_data['season']])[0]
         except ValueError:
@@ -236,3 +237,4 @@ class WaterPredictor:
             "supply_hours_per_day": round(ops[0], 1),
             "pumping_capacity_mld": round(ops[1], 2)
         }
+        
